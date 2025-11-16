@@ -7,6 +7,7 @@ const {
   DEPLOY_REF,
   DEPLOY_REPO,
   DEPLOY_PATH_FRONTEND,
+  NPM_PATH,
 } = process.env;
 
 module.exports = {
@@ -18,7 +19,8 @@ module.exports = {
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
       ssh_options: "IdentityFile=~/.ssh/edvm",
-      "post-deploy": `cd ${DEPLOY_PATH_FRONTEND} && npm i && npm run build`,
+
+      "post-deploy": `export ${NPM_PATH} && cd ${DEPLOY_PATH_FRONTEND} && npm i && npm run build`,
     },
   },
 };
