@@ -14,6 +14,9 @@ module.exports = {
     {
       name: "api-service",
       script: `/home/vma/nodejs-pm2-deploy/current/backend/dist/app.js`,
+      env_production: {
+        NODE_ENV: "production",
+      },
     },
   ],
   deploy: {
