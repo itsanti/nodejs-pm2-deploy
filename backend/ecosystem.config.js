@@ -13,10 +13,7 @@ module.exports = {
   apps: [
     {
       name: "api-service",
-      script: `./dist/app.js`,
-      env_production: {
-        NODE_ENV: "production",
-      },
+      script: `/home/vma/nodejs-pm2-deploy/current/backend/dist/app.js`,
     },
   ],
   deploy: {
