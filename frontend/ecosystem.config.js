@@ -20,9 +20,7 @@ module.exports = {
       path: DEPLOY_PATH,
       ssh_options: "IdentityFile=~/.ssh/edvm",
       env: {
-        PATH:
-          `/home/${DEPLOY_USER}/.nvm/versions/node/v20.19.5/bin:` +
-          process.env.PATH,
+        PATH: `/home/${DEPLOY_USER}/.nvm/versions/node/v20.19.5/bin:$PATH`,
       },
       "post-deploy": `cd ${DEPLOY_PATH_FRONTEND} && npm i && npm run build`,
     },
